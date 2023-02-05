@@ -60,10 +60,10 @@ class HomeController extends Controller
 
         $validator = Validator::make($request->all(), [
             'user_id' => 'required',
-            'price' => 'required',
-            'territory' => 'required',
-            'availability' => 'required',
-            'square' => 'required',
+            'price' => 'required|integer|max:5000000|min:50',
+            'territory' => 'required|in:Αθήνα, Θεσσαλονίκη, Πάτρα, Ηράκλειο',
+            'availability' => 'required|in:Ενοικίαση,Πώληση',
+            'square' => 'required|integer|max:1000|min:20',
         ]);
 
         if ($validator->fails()) {

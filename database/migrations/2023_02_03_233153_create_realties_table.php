@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('realties', function (Blueprint $table) {
             $table->id();
-            $table->float('price', 9,2);
+            $table->integer('price');
             $table->enum('territory',['Αθήνα', 'Θεσσαλονίκη', 'Πάτρα', 'Ηράκλειο']);
             $table->enum('availability',['Ενοικίαση','Πώληση']);
             $table->integer('square');
